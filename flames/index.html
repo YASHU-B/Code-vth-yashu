@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flames</title>
+</head>
+<body>
+    <div class="container">
+        <h1>The Flames</h1>
+        <div class="lovername">
+            <input type="text" class="loverone" placeholder="First Person Name"><br>
+            <span >   </span><br>
+            <input type="text" class="lovertwo" placeholder="Second Person Name">
+            <button onclick="calculate()
+            loverone='';
+            lovertwo='';
+            ">Calculate</button>
+        </div>
+        <div class="result">
+            <p>The relationship between <span class="nameone">SURYA</span> and <span class="nametwo">JYOTHIKA</span>
+                 Is</p>
+                  <h1 class="flame">MARRIAGE</h1>
+        </div>
+        <p class="p1">- Created by Yashuu !!!</p>
+    </div>
+</body>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    
+    }
+    body{
+        box-sizing: border-box;
+        background-color: red;
+        display: flex;
+        justify-content: center;
+        align-items: center ;
+        height:100vh ;
+    }
+    .container{
+        background-color: white;
+        padding: 1rem;
+        border-radius: 3px;
+    }
+    .container .lovername{
+        margin-top: 1rem;
+
+    }
+    .container .lovername input{
+        padding: 10px;
+        outline: 0;
+        font-size: 15px;
+        border-radius: 15px;
+    }
+    .container .lovername button{
+        padding: 10px;
+        background-color: green;
+        color: white;
+        font-size: 16px;
+        outline: 0;
+        border: 0;
+        border-radius: 10px;
+        margin-left: 20px;
+    }
+    .container .result{
+        margin-top: 2rem;
+        font-size: 18px;
+        text-align: center;
+    }
+    .container .flame{
+        text-align: center;
+        margin-top: 10px;
+    }
+    span{
+        font-weight: bold;
+    }
+    .container .lovername button:hover{
+        
+        cursor: pointer;
+        background-color: rgb(83, 156, 73);
+    }
+    .p1{
+        margin-left: 300px;
+        margin-top: 20px;
+    }
+     
+
+</style>
+
+</html>
+<script>
+    function calculate(){
+        let addbothinput;
+
+        const loverone = document.querySelector(".loverone").value;
+        const lovertwo = document.querySelector(".lovertwo").value;
+
+        document.querySelector(".nameone").innerHTML=loverone;
+        document.querySelector(".nametwo").innerHTML=lovertwo;
+
+
+        if(loverone===lovertwo){
+            alert("Error Both names are Same..!")
+        }
+        else{
+            addbothinput=loverone+lovertwo;
+            const myarr =addbothinput.split('')
+            
+
+            function removeduplicate(arr){
+                let discarded =[];
+                let good = [];
+                let test;
+
+                while(test =arr.pop()){
+                    if(arr.indexOf(test)>-1){
+                        discarded.push(test)
+                        continue;
+
+                    }
+                    else if(discarded.indexOf(test)){
+                        good.push(test)
+                    }
+                    
+
+                }
+                return good.reverse();
+            }
+            x=removeduplicate(myarr)
+            console.log(x)
+
+            if(x.length===1|| x.length===7|| x.length===13|| x.length===19|| x.length===25){
+                document.querySelector(".flame").innerHTML ="FRIENDSHIP"
+            }
+            else if(x.length===2|| x.length===8|| x.length===15|| x.length===20|| x.length===25){
+                 document.querySelector(".flame").innerHTML ="LOVERS"
+            }
+            else if(x.length===3|| x.length===9|| x.length===16|| x.length===21|| x.length===25){
+                 document.querySelector(".flame").innerHTML ="AFFECTION"
+            }
+            else if(x.length===4|| x.length===10|| x.length===17|| x.length===22|| x.length===25){
+                 document.querySelector(".flame").innerHTML ="MARRIAGE"
+            }
+            else if(x.length===5|| x.length===11|| x.length===18|| x.length===23|| x.length===25){
+                 document.querySelector(".flame").innerHTML ="ENEMIES"
+            }
+            else if(x.length===6|| x.length===12|| x.length===19|| x.length===24|| x.length===25){
+                 document.querySelector(".flame").innerHTML ="SIBLINGS"
+            }
+        }
+            
+    }   
+    
+</script>
